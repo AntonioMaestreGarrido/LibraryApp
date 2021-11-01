@@ -12,7 +12,38 @@
 
 
 <body>
-  
+    <h1>My Library</h1>
+
+    <div class="form-popup" id="newBookForm">
+        <form class="form-container">
+            <h2>New Book</h2>
+
+            <div>
+                <label for="title"><b>Title</b></label>
+                <input type="text" placeholder="Enter Title">
+            </div>
+
+            <div>
+                <label for="autor"><b>Autor</b></label>
+                <input type="text" placeholder="Enter Autor">
+            </div>
+
+            <div>
+                <label for="pages"><b>Pages</b></label>
+                <input type="text" placeholder="Enter Pages number">
+            </div>
+            <div>
+                <label for="read"><b>Have you read it?</b></label>
+                <input type="text" placeholder="Yes/No">
+            </div>
+
+
+            <div>
+                <button type="submit" class="btn">Add</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 
