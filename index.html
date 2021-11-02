@@ -12,38 +12,44 @@
 
 
 <body>
-    <h1>My Library</h1>
-
-    <div class="form-popup" id="newBookForm">
-        <form class="form-container">
-            <h2>New Book</h2>
-
-            <div>
-                <label for="title"><b>Title</b></label>
-                <input type="text" placeholder="Enter Title">
-            </div>
-
-            <div>
-                <label for="autor"><b>Autor</b></label>
-                <input type="text" placeholder="Enter Autor">
-            </div>
-
-            <div>
-                <label for="pages"><b>Pages</b></label>
-                <input type="text" placeholder="Enter Pages number">
-            </div>
-            <div>
-                <label for="read"><b>Have you read it?</b></label>
-                <input type="text" placeholder="Yes/No">
-            </div>
-
-
-            <div>
-                <button type="submit" class="btn">Add</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </div>
-        </form>
+    <h1 id="qwe">My Library</h1>
+    <div id="booklist">
+        <div>listado</div>
     </div>
+
+    <form id="addBook">
+        <h2>New Book</h2>
+
+
+        <div>
+            <label for="title"><b>Title</b></label>
+            <input id="title" type="text" placeholder="Enter Title">
+
+        </div>
+
+        <div>
+            <label for="autor"><b>Autor</b></label>
+            <input id="autor" type="text" placeholder="Enter Autor">
+        </div>
+
+        <div>
+            <label for="pages"><b>Pages</b></label>
+            <input id="pages" type="text" placeholder="Enter Pages number">
+        </div>
+        <div>
+            <label for="read"><b>Have you read it?</b></label>
+            <input id="read" type="text" placeholder="Yes/No">
+        </div>
+
+
+        <div>
+            <button id="submit" type="submit" class="btn">Add</button>
+            <button id="close" type="button" >Close</button>
+        </div>
+    </form>
+<footer>
+    <button id="abreForm">+</button>
+</footer>
 </body>
 
 
