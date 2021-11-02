@@ -1,8 +1,9 @@
-
-const myLibrary = [];
+var myLibrary;
+if(myLibrary==undefined){
+ myLibrary = [];}
 const formu = document.getElementById("addBook")
 setListeners()
-//dummy()
+dummy()
 
 
 
