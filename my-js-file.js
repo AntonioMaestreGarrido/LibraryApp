@@ -7,13 +7,13 @@ leeLocal();
 
 
 
-  
-  function leeLocal(){
+
+function leeLocal() {
     const myArrayFromLocalStorage = localStorage.getItem('arra')
     myLibrary = JSON.parse(myArrayFromLocalStorage)
-    if(myLibrary===null){myLibrary=[]}
+    if (myLibrary === null) { myLibrary = [] }
     makeTable(myLibrary)
-  }
+}
 
 
 function dummy() {
@@ -51,7 +51,9 @@ function addBook() {
     var Pages = formu.elements[2].value;
     var Read = formu.elements[3].value;
 
-    if (Read === "y") {
+    for (let i = 0; i < 4; i++) { if (formu.elements[i].value === "") { return } }
+
+    if (Read.toUpperCase() === "Y" || Read.toUpperCase() === "YES") {
         Read = true;
     } else {
         Read = false;
@@ -59,9 +61,9 @@ function addBook() {
 
     var b = new book(Title, Autor, Pages, Read);
     myLibrary.push(b);
-    
+
     localStorage.setItem('arra', JSON.stringify(myLibrary))
-    
+
     makeTable(myLibrary);
     for (var i = 0; i < formu.length; i++) {
         formu.elements[i].value = "";
@@ -73,8 +75,8 @@ function makeTable(array) {
         .querySelector("#booklist")
         .removeChild(document.querySelector("#booklist").firstChild);
     var table = document.createElement("table");
-    
-    var Cabecero=["Title","Autor","Pages","Read"]
+
+    var Cabecero = ["Title", "Autor", "Pages", "Read"]
     //primera linea con los nombres
     var row = document.createElement("tr");
     for (var j = 0; j < Cabecero.length; j++) {
@@ -83,9 +85,10 @@ function makeTable(array) {
 
         row.appendChild(cell);
     }
+    row.classList.add("titulo")
     table.appendChild(row);
     //var keys = Object.keys(myLibrary[0]);
-    
+
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement("tr");
         for (var j = 0; j < Cabecero.length; j++) {
@@ -97,14 +100,14 @@ function makeTable(array) {
             row.appendChild(cell);
         }
         var but2 = document.createElement("button");
-        but2.classList.add("delete");
+        but2.classList.add("read");
         but2.textContent = "Read?";
-        but2.addEventListener("click",cambiaRead)
+        but2.addEventListener("click", cambiaRead)
 
         var but = document.createElement("button");
         but.classList.add("delete");
         but.textContent = "Delete";
-        but.addEventListener("click",deleteBook)
+        but.addEventListener("click", deleteBook)
 
         document.querySelector("#add").addEventListener("click", addBook);
         row.appendChild(but2);
@@ -115,16 +118,19 @@ function makeTable(array) {
     //console.log(table)
     document.querySelector("#booklist").appendChild(table);
 }
-function cambiaRead(e){
-    var index=(Array.from(e.target.parentElement.parentNode.children).indexOf(e.target.parentElement))-1
-    alert(myLibrary[index]["Read"])
-    
+function cambiaRead(e) {
+    var index = (Array.from(e.target.parentElement.parentNode.children).indexOf(e.target.parentElement)) - 1
+
+    if ((myLibrary[index]["Read"])) { myLibrary[index]["Read"] = false }
+    else { myLibrary[index]["Read"] = true }
+    makeTable(myLibrary)
+
 }
-function deleteBook(e){
-    var index=(Array.from(e.target.parentElement.parentNode.children).indexOf(e.target.parentElement))-1
-    e.target.parentElement.style.backgroundColor="red"
+function deleteBook(e) {
+    var index = (Array.from(e.target.parentElement.parentNode.children).indexOf(e.target.parentElement)) - 1
+    e.target.parentElement.style.backgroundColor = "red"
     e.target.parentElement.delete
-   
+
     myLibrary.splice(index, 1);
     localStorage.setItem('arra', JSON.stringify(myLibrary))
     makeTable(myLibrary)
@@ -149,7 +155,7 @@ function storageAvailable(type) {
         storage.removeItem(x);
         return true;
     }
-    catch(e) {
+    catch (e) {
         return e instanceof DOMException && (
             // everything except Firefox
             e.code === 22 ||

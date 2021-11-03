@@ -1,45 +1,66 @@
 :root{
     margin: 0;
     padding: 0;
-
+color: white;
+background-color: #90CAF9;
 }
 
 #addBook{
     margin: auto;
-    display: block;
+    display: none;
     position: absolute;
     width: 320px;
     padding: 10px;
     top: 100px;
     right: 35%;
     flex-direction: column;
-    background-color: bisque;
+    background-color: #2196F3;
     z-index: 9;
     border: 4px solid black;
 
     
 }
-.delete{
-    width: 50px;
+
+.delete ,.read{
+    width: 78px;
     height: 25px;
-    background-color: rgb(129, 178, 252);
+   
     align-self: center;
     margin: auto;
+    color: crimson;
+    margin: 1px;
     
 }
+.read{
+    color: rgb(6, 87, 236);
+}
+
 table{
+    padding: 30px;
+   
     max-width: 75%;
     min-width: 75%;
     z-index: 4;
     justify-content: center;
     align-content: center;
+    margin: auto;
 }
-table, th, td {
+ th, td {
     border: 1px solid black;
+    margin: auto;
+    width: 150px;
   }
   td{margin: 4px;}
 #booklist{
     display: flex;
+    
+}
+tr{
+    width: max-content;
+    background-color: #2196F3;
+}
+td{
+    width: 22%;
     
 }
 .form-container{
@@ -48,6 +69,7 @@ table, th, td {
     
 
 }
+
 #abreForm{
     position: absolute;
     bottom: 20px;
@@ -67,12 +89,16 @@ input , label{
 h1{
     font-size: 50px;
     text-align: center;
+    border: solid 4px white;
 }
 button{
     margin-top: 8px;
-}
+    content: "ssssss";}
 h2{
     text-align: center;
     border: solid 2px black;
     font-size: 36px;
+}.titulo{
+    font-size: 20px;
+    background-color: #0a5ea3 !important;
 }
