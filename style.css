@@ -1,8 +1,12 @@
+:root{
+    margin: 0;
+    padding: 0;
 
+}
 
 #addBook{
     margin: auto;
-    display: flex;
+    display: block;
     position: absolute;
     width: 320px;
     padding: 10px;
@@ -15,9 +19,20 @@
 
     
 }
+.delete{
+    width: 50px;
+    height: 25px;
+    background-color: rgb(129, 178, 252);
+    align-self: center;
+    margin: auto;
+    
+}
 table{
-    width: 75%;
+    max-width: 75%;
+    min-width: 75%;
     z-index: 4;
+    justify-content: center;
+    align-content: center;
 }
 table, th, td {
     border: 1px solid black;
