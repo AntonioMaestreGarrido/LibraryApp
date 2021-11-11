@@ -1,10 +1,23 @@
+class Book{
+    
+    constructor(Title, Autor, Pages, Read){
+        this.Title = Title;
+        this.Autor = Autor;
+        this.Pages = Pages;
+        this.Read = Read;
+        
+
+
+    }
+  
+
+}
 var myLibrary = [];
 const formu = document.getElementById("addBook");
 setListeners();
 leeLocal();
-//dummy();
+dummy();
 //localStorage.setItem('arra', JSON.stringify(myLibrary))
-
 
 
 
@@ -17,12 +30,12 @@ function leeLocal() {
 
 
 function dummy() {
-    var a = new book("1Dune", "Frank Herbert", "333", true);
-    var b = new book("2Game of thrones", "George Martin", "983", true);
-    var c = new book("3Mort", "Terry Pratchett", "350", true);
-    var d = new book("4Dune", "Frank Herbert", "333", true);
-    var e = new book("5Game of thrones", "George Martin", "983", true);
-    var f = new book("6Mort", "Terry Pratchett", "350", false);
+    var a = new Book("Dune", "Frank Herbert", "333", true);
+    var b = new Book("Game of thrones", "George Martin", "983", true);
+    var c = new Book("Mort", "Terry Pratchett", "350", true);
+    var d = new Book("Dune", "Frank Herbert", "333", true);
+    var e = new Book("Game of thrones", "George Martin", "983", true);
+    var f = new Book("Mort", "Terry Pratchett", "350", false);
     myLibrary.push(a);
     myLibrary.push(b);
     myLibrary.push(c);
@@ -36,7 +49,7 @@ function setListeners() {
     document.querySelector("#add").addEventListener("click", addBook);
     document.querySelector("#abreForm").addEventListener("click", openform);
     document.querySelector("#close").addEventListener("click", closeForm);
-    //addBook()
+   
 }
 
 function book(Title, Autor, Pages, Read) {
@@ -45,6 +58,8 @@ function book(Title, Autor, Pages, Read) {
     this.Pages = Pages;
     this.Read = Read;
 }
+
+
 function addBook() {
     var Title = formu.elements[0].value;
     var Autor = formu.elements[1].value;
